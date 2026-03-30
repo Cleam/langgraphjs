@@ -22,8 +22,10 @@ mkdir my-langgraph-app
 cd my-langgraph-app
 npm init -y
 npm install @langchain/langgraph @langchain/core
-npm install -D typescript tsx
+npm install -D typescript tsx  # tsx 用于直接运行 .ts 文件
 ```
+
+> 💡 **提示**：这里使用 `tsx` 可以直接运行 TypeScript 文件（`npx tsx src/main.ts`），免去编译步骤，方便学习调试。生产环境中建议先编译再运行。
 
 ### 第二步：创建 tsconfig.json
 

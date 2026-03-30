@@ -92,7 +92,8 @@ npm install @langchain/langgraph-checkpoint
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "outDir": "./dist"
   }
 }
 ```

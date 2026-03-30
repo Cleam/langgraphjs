@@ -88,10 +88,12 @@ const weatherTool = tool(
 const calculatorTool = tool(
   async ({ expression }) => {
     try {
-      // 注意：实际项目中不要用 eval，这里仅做演示
-      return String(eval(expression));
+      // 简单的四则运算解析（生产环境建议使用 mathjs 等库）
+      const sanitized = expression.replace(/[^0-9+\-*/().  ]/g, "");
+      const result = Function(`"use strict"; return (${sanitized})`)();
+      return String(result);
     } catch {
-      return "计算出错";
+      return "计算出错，请检查表达式格式";
     }
   },
   {
